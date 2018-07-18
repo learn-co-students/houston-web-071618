@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
+# gem "rails"
+
+# Added at 2018-07-18 10:32:48 -0500 by graham.troyer-joy:
+gem "pry", "~> 0.11.3"
