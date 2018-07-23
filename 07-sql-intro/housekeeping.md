@@ -1,6 +1,7 @@
+- Schedule for week
 - Code Challenge information
   - Mock code challenge on Wednesday
-  - Submitting
+  - Submitting - Will make README repo
   - Preparing
     - runner file
     - No tests, so practice building models for relationships from a blank slate (use lecture code as examples)
