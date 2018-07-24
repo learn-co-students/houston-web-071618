@@ -9,7 +9,10 @@ class TweetsApp
     puts 'Enter a message:'
     message = gets.chomp
 
-    tweet = Tweet.new({'username' => username, 'message' => message})
+    Tweet.create({
+      'username' => username,
+      'message' => message
+    })
 
     tweets = Tweet.all
     render(tweets)
