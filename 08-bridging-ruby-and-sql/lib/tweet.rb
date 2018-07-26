@@ -24,7 +24,7 @@ class Tweet
     INSERT INTO tweets (username, message) VALUES (?, ?)
     SQL
 
-    DB[:conn].execute(sql_query, self.username, self.message)
+    DB[:conn].execute("sql_query", self.username, self.message)
   end
 
   def self.create(props={})
