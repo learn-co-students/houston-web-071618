@@ -1,0 +1,2 @@
+- where vs find_by
+- class name must match with table name

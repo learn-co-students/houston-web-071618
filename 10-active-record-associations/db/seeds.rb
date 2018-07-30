@@ -1,0 +1,1 @@
+Customer.create(name: 'Sally')
