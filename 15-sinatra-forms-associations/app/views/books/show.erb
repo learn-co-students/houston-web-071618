@@ -1,0 +1,8 @@
+<div><%= @book.title %></div>
+<div><a href="/authors/<%= @book.author_id %>"><%= @book.author.name %></a></div>
+<div><%= @book.snippet %></div>
+
+<form action="/books/<%= @book.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <button>DELETE THIS BOOK RIGHT NOW</button>
+</form>

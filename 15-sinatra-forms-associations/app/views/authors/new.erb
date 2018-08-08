@@ -1,0 +1,12 @@
+<form action="/authors" method="post">
+  <!-- name input -->
+  <input name="author[name]" placeholder="name">
+  <!-- dob input -->
+  <input name="author[dob]" placeholder="dob">
+
+  <input type="text" name="author[book_names][]" placeholder="Book 1 Title">
+
+  <input type="text" name="author[book_names][]" placeholder="Book 2 Title">
+
+  <input type="submit" value="Create Author">
+</form>
