@@ -14,13 +14,10 @@ class DogsController < ApplicationController
   def create
     dog = Dog.new(dog_params)
 
-    byebug
-    "hello"
-
     if dog.valid?
       # create the dog
     else
-      # display an error message
+      # dog.errors.messages
     end
 
     redirect_to dog
