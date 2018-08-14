@@ -1,0 +1,8 @@
+<p><%= @owner.name %></p>
+
+<h2>Dogs</h2>
+<% @owner.dogs.each do |dog| %>
+  <p><%= link_to dog.name, dog %></p>
+<% end %>
+
+<%= link_to 'Destroy', @owner, method: :delete, data: { confirm: 'Are you sure?' } %>
