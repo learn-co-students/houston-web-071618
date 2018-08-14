@@ -1,0 +1,15 @@
+<h3>Form Tag</h3>
+<%= form_tag("/dogs") do %>
+  <%= text_field_tag("dog[name]", nil, placeholder: "name") %>
+  <%= number_field_tag("dog[num_legs]", nil, placeholder: "num_legs") %>
+  <%= text_field_tag("dog[owner]", nil, placeholder: "owner") %>
+  <%= submit_tag %>
+<% end %>
+
+<h3>Form For</h3>
+<%= form_for @dog do |form| %>
+  <%= form.text_field :name, placeholder: 'name' %>
+  <%= form.number_field :num_legs, placeholder: 'number of legs' %>
+  <%= form.text_field :owner, placeholder: 'owner' %>
+  <%= form.submit %>
+<% end %>

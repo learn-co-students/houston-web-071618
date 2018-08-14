@@ -1,0 +1,7 @@
+<h3>Form With</h3>
+<%= form_with model: @dog do |form| %>
+  <%= form.text_field :name, placeholder: 'name' %>
+  <%= form.number_field :num_legs, placeholder: 'number of legs' %>
+  <%= form.select :owner_id, Owner.all.map { |owner| [ owner.name, owner.id ] } %>
+  <%= form.submit %>
+<% end %>

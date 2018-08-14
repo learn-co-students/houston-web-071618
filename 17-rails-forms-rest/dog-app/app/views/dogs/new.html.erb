@@ -1,0 +1,6 @@
+<%= form_with model: @dog do |form| %>
+  <%= form.text_field :name, placeholder: 'name' %>
+  <%= form.number_field :num_legs, placeholder: 'number of legs' %>
+  <%= form.text_field :owner, placeholder: 'owner' %>
+  <%= form.submit %>
+<% end %>
