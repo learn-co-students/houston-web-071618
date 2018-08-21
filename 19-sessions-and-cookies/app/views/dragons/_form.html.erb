@@ -1,0 +1,14 @@
+<p><%= flash[:error_message] %></p>
+<%= form_with model: @dragon do | form | %>
+    <div>
+        <label>Name:</label>
+        <%= form.text_field :name %>
+    </div>
+    <div>
+        <label>Abilities:</label>
+        <%= form.collection_check_boxes :ability_ids, @abilities, :id, :name %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

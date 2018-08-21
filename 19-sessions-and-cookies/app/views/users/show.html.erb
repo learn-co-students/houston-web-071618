@@ -1,0 +1,10 @@
+<h1><%= @user.name %></h1>
+<small><%= link_to 'Edit', edit_user_path(@user) %></small>
+<div>
+    <p>Dragons: </p>
+    <ul>
+        <% @user.dragons.each do | dragon | %>
+            <li><%= link_to dragon.name, dragon %></li>
+        <% end %>
+    </ul>
+</div>

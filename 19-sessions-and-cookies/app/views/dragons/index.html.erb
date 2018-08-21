@@ -1,0 +1,7 @@
+<h1>Dragons</h1>
+<%= link_to "Create New Dragon", new_dragon_path%>
+<ul>
+<% @dragons.each do | dragon | %>
+    <li><%= link_to dragon.name, dragon %></li>
+<% end %>
+</ul>

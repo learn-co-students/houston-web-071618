@@ -1,0 +1,10 @@
+<h1><%= @ability.name %></h1>
+<small><%= link_to 'Edit', edit_ability_path(@ability) %></small>
+<div>
+    <p>Dragons: </p>
+    <ul>
+        <% @ability.dragons.each do | dragon | %>
+            <li><%= link_to dragon.name, dragon %></li>
+        <% end %>
+    </ul>
+</div>

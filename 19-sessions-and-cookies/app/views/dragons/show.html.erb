@@ -1,0 +1,13 @@
+<h1><%= @dragon.name %></h1>
+<small><%= link_to 'Edit', edit_dragon_path(@dragon) %></small>
+<div>
+    <p>User: <%= link_to @dragon.user.name, @dragon.user %>
+</div>
+<div>
+    <p>Abilities: </p>
+    <ul>
+        <% @dragon.abilities.each do | ability | %>
+            <li><%= link_to ability.name, ability %></li>
+        <% end %>
+    </ul>
+</div>

@@ -1,0 +1,7 @@
+<h1>Abilities</h1>
+<%= link_to "Create New Ability", new_ability_path%>
+<ul>
+<% @abilities.each do | ability | %>
+    <li><%= link_to ability.name, ability %></li>
+<% end %>
+</ul>
