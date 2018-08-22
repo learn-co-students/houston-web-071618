@@ -1,0 +1,8 @@
+<%= flash[:error] %>
+
+<%= form_with model: User.new do |f| %>
+  <%= f.text_field :username, placeholder: "username" %>
+  <%= f.password_field :password, placeholder: "password" %>
+  <%= f.password_field :password_confirmation, placeholder: "confirm password" %>
+  <%= f.submit %>
+<% end %>

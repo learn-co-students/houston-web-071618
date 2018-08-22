@@ -1,0 +1,5 @@
+<h1><%= @user.username %><h1>
+
+<% @user.valuables.each do |valuable| %>
+  <div><%= valuable.name %></div>
+<% end %>
