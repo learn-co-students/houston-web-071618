@@ -8,6 +8,17 @@
 * Use (or at least recognize) jQuery
 * Use the Chrome Developer tools to debug
 
+# Event Listeners
+
+## SWBATs 
+* Create event listeners
+* Distinguish between event types
+* Explain when and why to use event listeners
+* Write event listeners as stand-alone functions and in-line functions
+* Use event listeners to manipulate the DOM
+* Delegate events using the `event.target`
+* Synthesize knowledge of forms with event listeners
+
 ## Resources
 * [The DOM](https://www.youtube.com/watch?v=oVp-CKK25NM)
 
