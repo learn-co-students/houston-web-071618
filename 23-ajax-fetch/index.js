@@ -1,46 +1,44 @@
+// // Postman demo
+
 // XMLHttpRequest
-// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
-function reqListener() {
-  //debugger;
-  console.log(this.responseText);
-}
 
-var oReq = new XMLHttpRequest();
-oReq.addEventListener("load", reqListener);
-oReq.open(
-  "GET",
-  "https://fetch-message-in-the-bottle.herokuapp.com/api/v1/messages/"
-);
-oReq.send();
+const request = new XMLHttpRequest();
 
-// `get` request using `fetch`
-fetch("https://fetch-message-in-the-bottle.herokuapp.com/api/v1/messages/") //will execute an asynchronous request and return the request object wrapped in a promise
-  .then(request => request.json()) //parse the json data from the response object. request.json() will return a promise
-  .then(jsonData => console.log(jsonData)); // now that we have access to the actual json data we can console log the json response
+request.open("get", "http://localhost:3002/students");
 
-// `post` request using `fetch`
-// let's build the config object
-const url =
-  "https://fetch-message-in-the-bottle.herokuapp.com/api/v1/messages/";
-const config = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    message: {
-      real_name: "AJAX Readme",
-      message: "Just a test message"
-    }
-  })
-};
+request.send();
 
-fetch(url, config)
-  .then(request => request.json()) //parse the json data from the response object. request.json() will return a promise
-  .then(jsonData => console.log(jsonData)); // now that we have access to the actual json data we can console log the json response
+request.response;
 
-// your `get` to anything
-// paste your `get` fetch here
+// // fetch
+// // callbacks vs. promises vs. generators vs. async/await
+// // https://gist.github.com/juanmaguitar/99a8e5d0487095995afaa43a32d8f512
 
-// your `post` to our message in the bottle
-// paste your `post` fetch here
+// fetch("http://localhost:3000/students")
+//   .then(r => r.json())
+//   .then(json => console.log(json));
+
+// fetch("http://localhost:3000/students", {
+//   method: "post",
+//   headers: {
+//     "Content-Type": "application/json"
+//   },
+//   body: JSON.stringify({
+//     student: {
+//       name: "Suzy",
+//       awesomeness: 293874
+//     }
+//   })
+// })
+//   .then(response => response.json())
+//   .then(json => console.log(json));
+
+// bigArray = [1, 2, 3];
+
+// console.log("Before");
+// setTimeout(() => {
+//   bigArray.forEach(item => {
+//     console.log(item);
+//   });
+// }, 3000);
+// console.log("After");
