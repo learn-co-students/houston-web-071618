@@ -33,6 +33,8 @@ form, #lists div {
 
 #lists {
 	clear:both;
+	background: red;
+	height: 10px;
 }
 
 label, input {
