@@ -48,6 +48,16 @@ Instructors will start to steer you towards resources that answer your questions
 
 ### What was hard about Mod 3?
 
+- State Management (REACT!)
+- DOM Manipulation (REACT!)
+- Events (REACT!)
+- ~scoping~
+- ~callbacks~
+- ~prototypes~
+- ~this keyword~
+- ~Fetch syntax~
+- ~Async~
+
 ### Brief History/Context
 
 React is made by Facebook. I like to point out that if anyone's ever heard about the licensing thing (i.e. you can't build an app that competes with FB in React) that's no longer true and React uses the MIT open source license. There are two libraries react, react-dom, this is to divide up the functionality and enables react-native, react-vr, etc.
