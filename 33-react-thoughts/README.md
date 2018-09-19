@@ -14,11 +14,13 @@ You'll build a small React application where you'll update state in response to 
 
 ## Techniques
 
-- Assignment with destructuring
-- Constructor syntax & classes
-- Functional components
-- Passing callbacks down
-- Passing callbacks to event handlers
+- (✓) Functional and class-based components
+- (✓) Import / Export (named and default)
+- (✓) Assignment with destructuring
+- (✓) Passing callbacks down
+- (✓) Passing callbacks to event handlers
+- (✓) Constructor syntax & classes
+- (✓) Defining callbacks within classes (property v prototype)
 - Asynchronous setState
 
 ## Animal Shelter
@@ -77,5 +79,3 @@ There are several components that need your attention. All of these components c
 - [Events](https://facebook.github.io/react/docs/events.html)
 - [Using State Correctly](https://reactjs.org/docs/state-and-lifecycle.html#using-state-correctly)
 - [State Updates May Be Asynchronous](https://reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous)
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/react-props-and-state-lab'>Props And State Lab</a> on Learn.co and start learning to code for free.</p>

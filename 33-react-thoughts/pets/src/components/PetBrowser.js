@@ -2,10 +2,20 @@ import React from "react";
 
 import Pet from "./Pet";
 
-const PetBrowser = ({ filteredPets, filteredAdoptedPets }) => {
+const PetBrowser = ({ filteredPets, filteredAdoptedPets, adoptPet }) => {
   return (
     <div className="ui cards">
-      <Pet />
+      {filteredPets.map(pet => {
+        const isAdopted = filteredAdoptedPets.includes(pet);
+        return (
+          <Pet
+            key={pet.id}
+            adoptPet={adoptPet}
+            isReallyAdopted={isAdopted}
+            {...pet}
+          />
+        );
+      })}
     </div>
   );
 };
