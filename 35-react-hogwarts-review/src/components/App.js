@@ -13,11 +13,9 @@ class App extends Component {
   }
 
   componentDidMount(){
-    setTimeout( () => {
-      fetch('http://localhost:3000/hogs')
+    fetch('http://localhost:3000/hogs')
       .then(result => result.json())
       .then(hogs => this.setState( { hogs, isLoading: false } ))
-    }, 5000)
   }
 
   render() {
