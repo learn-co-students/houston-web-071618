@@ -1,28 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import FoodList from './components/FoodList.js'
+
+import { connect } from 'react-redux'
+import NewFoodForm from './components/NewFoodForm.js';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <FoodList entrees={this.props.entrees} 
+          upVote={this.props.upVote}
+          downVote={this.props.downVote} 
+        ></FoodList>
+        <NewFoodForm />
       </div>
+      
     );
   }
 }
 
-export default App;
+const mapStateToProps = function(state){
+  return {
+    entrees: state.entrees
+  }
+}
+
+const mapDispatchToProps = function(dispatch){
+  return {
+    upVote: entree => {
+      dispatch({ type: 'UPVOTE', payload: entree})
+    },
+    downVote: entree => {
+      dispatch({ type: 'DOWNVOTE', payload: entree})
+    }
+  }
+}
+
+const generateReduxApp = connect(mapStateToProps, mapDispatchToProps)
+
+const ReduxApp = generateReduxApp(App)
+
+export default ReduxApp;
+
+//export default connect(mapStateToProps, mapDispatchToProps)(App)
