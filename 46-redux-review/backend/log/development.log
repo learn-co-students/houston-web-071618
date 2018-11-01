@@ -1,0 +1,346 @@
+Started GET "/users" for ::1 at 2018-11-01 18:43:47 -0500
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePandas (20181101223819)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "pandas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181101223819_create_pandas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181101223819"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateFoods (20181101223831)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "foods" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "panda_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181101223831_create_foods.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_foods_on_panda_id" ON "foods" ("panda_id")[0m
+  ↳ db/migrate/20181101223831_create_foods.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181101223831"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-01 23:44:07.268262"], ["updated_at", "2018-11-01 23:44:07.268262"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/users" for ::1 at 2018-11-01 18:44:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/pandas" for ::1 at 2018-11-01 18:44:37 -0500
+Processing by PandasController#index as */*
+  Parameters: {"panda"=>{}}
+Filter chain halted as :check_authentication rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/pandas" for ::1 at 2018-11-01 18:45:50 -0500
+Processing by PandasController#create as */*
+  Parameters: {"username"=>"isaacsmiles@gmail.com", "password"=>"[FILTERED]", "panda"=>{"username"=>"isaacsmiles@gmail.com"}}
+Unpermitted parameters: :username, :password, :panda
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[36mPanda Create (0.5ms)[0m  [1m[32mINSERT INTO "pandas" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-11-01 23:45:50.311537"], ["updated_at", "2018-11-01 23:45:50.311537"]]
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/pandas" for ::1 at 2018-11-01 18:46:18 -0500
+Processing by PandasController#create as */*
+  Parameters: {"username"=>"isaacsmiles@gmail.com", "password"=>"[FILTERED]", "panda"=>{"username"=>"isaacsmiles@gmail.com"}}
+Unpermitted parameter: :panda
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'password' for Panda.):
+  
+app/controllers/pandas_controller.rb:6:in `create'
+Started POST "/pandas" for ::1 at 2018-11-01 18:46:33 -0500
+Processing by PandasController#create as */*
+  Parameters: {"username"=>"isaacsmiles@gmail.com", "password"=>"[FILTERED]", "panda"=>{"username"=>"isaacsmiles@gmail.com"}}
+Unpermitted parameter: :panda
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[36mPanda Create (0.5ms)[0m  [1m[32mINSERT INTO "pandas" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "isaacsmiles@gmail.com"], ["password_digest", "$2a$10$uvjjkINXEGggJyZu8wIdS.Ob0K.Pk2Ihu8sbqFkIaB64.iaY50kCu"], ["created_at", "2018-11-01 23:46:33.146050"], ["updated_at", "2018-11-01 23:46:33.146050"]]
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+Completed 200 OK in 77ms (Views: 0.3ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/pandas/2" for ::1 at 2018-11-01 18:46:48 -0500
+Processing by PandasController#destroy as */*
+  Parameters: {"username"=>"isaacsmiles@gmail.com", "password"=>"[FILTERED]", "id"=>"2", "panda"=>{"username"=>"isaacsmiles@gmail.com"}}
+Filter chain halted as :check_authentication rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pandas/" for ::1 at 2018-11-01 18:47:57 -0500
+Processing by PandasController#create as */*
+  Parameters: {"username"=>"isaacsmiles@gmail.com", "password"=>"[FILTERED]", "panda"=>{"username"=>"isaacsmiles@gmail.com"}}
+Unpermitted parameter: :panda
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[36mPanda Create (0.4ms)[0m  [1m[32mINSERT INTO "pandas" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "isaacsmiles@gmail.com"], ["password_digest", "$2a$10$sszBdVWbrz9jTUZq9INMVuColpRCZLimTV0jRSmzyVUK4BJCgWbnK"], ["created_at", "2018-11-01 23:47:57.932521"], ["updated_at", "2018-11-01 23:47:57.932521"]]
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 2.4ms)
+
+
+  
+NameError (uninitialized constant ApplicationController::JWT):
+  
+app/controllers/application_controller.rb:6:in `encode_token'
+app/controllers/pandas_controller.rb:7:in `create'
+Started POST "/pandas/" for ::1 at 2018-11-01 18:50:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PandasController#create as */*
+  Parameters: {"username"=>"isaacsmiles@gmail.com", "password"=>"[FILTERED]", "panda"=>{"username"=>"isaacsmiles@gmail.com"}}
+Unpermitted parameter: :panda
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[36mPanda Create (0.6ms)[0m  [1m[32mINSERT INTO "pandas" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "isaacsmiles@gmail.com"], ["password_digest", "$2a$10$zIZsVaiJsAnzthH.NOe4I.McCGYTJ3fxQYfUfJ7o0rmPdGss5ft56"], ["created_at", "2018-11-01 23:50:10.540392"], ["updated_at", "2018-11-01 23:50:10.540392"]]
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+Completed 200 OK in 69ms (Views: 0.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/pandas/" for ::1 at 2018-11-01 18:50:37 -0500
+Processing by PandasController#index as */*
+  Parameters: {"panda"=>{}}
+Filter chain halted as :check_authentication rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pandas/" for ::1 at 2018-11-01 18:52:06 -0500
+Processing by PandasController#index as */*
+  Parameters: {"panda"=>{}}
+Completed 500 Internal Server Error in 87859ms (ActiveRecord: 0.4ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `decoded_token'
+app/controllers/application_controller.rb:27:in `decoded_token'
+app/controllers/application_controller.rb:16:in `current_panda'
+app/controllers/application_controller.rb:42:in `logged_in?'
+app/controllers/application_controller.rb:38:in `check_authentication'
+Started POST "/pandas/" for ::1 at 2018-11-01 18:53:39 -0500
+Processing by PandasController#create as */*
+  Parameters: {"username"=>"isaacsmiles@gmail.com", "password"=>"[FILTERED]", "panda"=>{"username"=>"isaacsmiles@gmail.com"}}
+Unpermitted parameter: :panda
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[36mPanda Create (1.0ms)[0m  [1m[32mINSERT INTO "pandas" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "isaacsmiles@gmail.com"], ["password_digest", "$2a$10$GOfCcbnEfLZ2v0nR/c8Zku0qI4nM5PVEDU4yHQ1Cgzt7y1uXDYTgK"], ["created_at", "2018-11-01 23:53:39.187975"], ["updated_at", "2018-11-01 23:53:39.187975"]]
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+Completed 200 OK in 146ms (Views: 6.0ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/pandas/" for ::1 at 2018-11-01 18:54:01 -0500
+Processing by PandasController#index as */*
+  Parameters: {"panda"=>{}}
+Completed 500 Internal Server Error in 3925ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `decoded_token'
+app/controllers/application_controller.rb:27:in `decoded_token'
+app/controllers/application_controller.rb:16:in `current_panda'
+app/controllers/application_controller.rb:42:in `logged_in?'
+app/controllers/application_controller.rb:38:in `check_authentication'
+Started GET "/pandas/" for ::1 at 2018-11-01 18:54:11 -0500
+Processing by PandasController#index as */*
+  Parameters: {"panda"=>{}}
+  [1m[36mPanda Load (2.0ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[36mPanda Load (1.6ms)[0m  [1m[34mSELECT "pandas".* FROM "pandas"[0m
+  ↳ app/controllers/pandas_controller.rb:11
+Completed 200 OK in 162ms (Views: 49.9ms | ActiveRecord: 16.0ms)
+
+
+Started DELETE "/pandas/1" for ::1 at 2018-11-01 18:54:24 -0500
+Processing by PandasController#destroy as */*
+  Parameters: {"username"=>"isaacsmiles@gmail.com", "password"=>"[FILTERED]", "id"=>"1", "panda"=>{"username"=>"isaacsmiles@gmail.com"}}
+  [1m[36mPanda Load (1.5ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[36mPanda Load (1.1ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pandas_controller.rb:26
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pandas_controller.rb:27
+  [1m[36mPanda Destroy (3.9ms)[0m  [1m[31mDELETE FROM "pandas" WHERE "pandas"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/pandas_controller.rb:27
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pandas_controller.rb:27
+Completed 200 OK in 84ms (Views: 9.1ms | ActiveRecord: 10.7ms)
+
+
+Started DELETE "/pandas/2" for ::1 at 2018-11-01 18:54:29 -0500
+Processing by PandasController#destroy as */*
+  Parameters: {"username"=>"isaacsmiles@gmail.com", "password"=>"[FILTERED]", "id"=>"2", "panda"=>{"username"=>"isaacsmiles@gmail.com"}}
+  [1m[36mPanda Load (1.2ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[36mPanda Load (1.5ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pandas_controller.rb:26
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pandas_controller.rb:27
+  [1m[36mPanda Destroy (2.2ms)[0m  [1m[31mDELETE FROM "pandas" WHERE "pandas"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/pandas_controller.rb:27
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pandas_controller.rb:27
+Completed 200 OK in 81ms (Views: 6.9ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/pandas/" for ::1 at 2018-11-01 18:54:34 -0500
+Processing by PandasController#index as */*
+  Parameters: {"panda"=>{}}
+  [1m[36mPanda Load (6.4ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[36mPanda Load (2.7ms)[0m  [1m[34mSELECT "pandas".* FROM "pandas"[0m
+  ↳ app/controllers/pandas_controller.rb:11
+Completed 200 OK in 106ms (Views: 69.2ms | ActiveRecord: 9.1ms)
+
+
+Started DELETE "/pandas/3" for ::1 at 2018-11-01 18:54:45 -0500
+Processing by PandasController#destroy as */*
+  Parameters: {"username"=>"isaacsmiles@gmail.com", "password"=>"[FILTERED]", "id"=>"3", "panda"=>{"username"=>"isaacsmiles@gmail.com"}}
+  [1m[36mPanda Load (1.2ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[36mPanda Load (5.6ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pandas_controller.rb:26
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pandas_controller.rb:27
+  [1m[36mPanda Destroy (2.7ms)[0m  [1m[31mDELETE FROM "pandas" WHERE "pandas"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/pandas_controller.rb:27
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pandas_controller.rb:27
+Completed 200 OK in 99ms (Views: 11.6ms | ActiveRecord: 13.6ms)
+
+
+Started DELETE "/pandas/4" for ::1 at 2018-11-01 18:54:48 -0500
+Processing by PandasController#destroy as */*
+  Parameters: {"username"=>"isaacsmiles@gmail.com", "password"=>"[FILTERED]", "id"=>"4", "panda"=>{"username"=>"isaacsmiles@gmail.com"}}
+  [1m[36mPanda Load (1.3ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[36mPanda Load (1.3ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pandas_controller.rb:26
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pandas_controller.rb:27
+  [1m[36mPanda Destroy (2.4ms)[0m  [1m[31mDELETE FROM "pandas" WHERE "pandas"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/pandas_controller.rb:27
+  [1m[35m (66.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pandas_controller.rb:27
+Completed 200 OK in 151ms (Views: 12.8ms | ActiveRecord: 72.5ms)
+
+
+Started GET "/pandas/4" for ::1 at 2018-11-01 18:54:51 -0500
+Processing by PandasController#show as */*
+  Parameters: {"id"=>"4", "panda"=>{}}
+  [1m[36mPanda Load (1.5ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[36mPanda Load (3.6ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pandas_controller.rb:15
+Completed 404 Not Found in 47ms (ActiveRecord: 5.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Panda with 'id'=4):
+  
+app/controllers/pandas_controller.rb:15:in `show'
+Started GET "/pandas/" for ::1 at 2018-11-01 18:55:04 -0500
+Processing by PandasController#index as */*
+  Parameters: {"panda"=>{}}
+  [1m[36mPanda Load (1.3ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[36mPanda Load (1.4ms)[0m  [1m[34mSELECT "pandas".* FROM "pandas"[0m
+  ↳ app/controllers/pandas_controller.rb:11
+Completed 200 OK in 51ms (Views: 24.1ms | ActiveRecord: 2.6ms)
+
+
