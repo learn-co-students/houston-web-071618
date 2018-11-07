@@ -344,3 +344,144 @@ Processing by PandasController#index as */*
 Completed 200 OK in 51ms (Views: 24.1ms | ActiveRecord: 2.6ms)
 
 
+Started POST "/pandas/" for ::1 at 2018-11-02 11:28:25 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PandasController#create as */*
+  Parameters: {"username"=>"joshpanda", "password"=>"[FILTERED]", "panda"=>{"username"=>"joshpanda"}}
+Unpermitted parameter: :panda
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[36mPanda Create (1.3ms)[0m  [1m[32mINSERT INTO "pandas" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "joshpanda"], ["password_digest", "$2a$10$h2MflklIE.CHzmbOl4VL5uepzbGp2f13tTTYnypWQqHa8.I0s3R9a"], ["created_at", "2018-11-02 16:28:25.474095"], ["updated_at", "2018-11-02 16:28:25.474095"]]
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+Completed 200 OK in 77ms (Views: 0.5ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/pandas/" for ::1 at 2018-11-02 11:38:39 -0500
+Processing by PandasController#create as */*
+  Parameters: {"username"=>"joshpanda", "password"=>"[FILTERED]", "panda"=>{"username"=>"joshpanda"}}
+Unpermitted parameter: :panda
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[36mPanda Create (0.4ms)[0m  [1m[32mINSERT INTO "pandas" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "joshpanda"], ["password_digest", "$2a$10$eGkb30gw6XnoD8PKajIc5Ol1w4itX3si7jMKTDIDnmIyec8yfctg2"], ["created_at", "2018-11-02 16:38:39.272073"], ["updated_at", "2018-11-02 16:38:39.272073"]]
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+Completed 200 OK in 72ms (Views: 0.4ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/pandas/" for ::1 at 2018-11-02 11:48:59 -0500
+Processing by PandasController#create as */*
+  Parameters: {"username"=>"joshpanda", "password"=>"[FILTERED]", "panda"=>{"username"=>"joshpanda"}}
+Unpermitted parameter: :panda
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[36mPanda Create (0.7ms)[0m  [1m[32mINSERT INTO "pandas" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "joshpanda"], ["password_digest", "$2a$10$0QyghScyb7ZGkIQ7DUkXwOq6NPTyqL2AVreOsGcNAfuScvj3LBXby"], ["created_at", "2018-11-02 16:48:59.747688"], ["updated_at", "2018-11-02 16:48:59.747688"]]
+  ↳ app/controllers/pandas_controller.rb:6
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pandas_controller.rb:6
+Completed 200 OK in 88ms (Views: 0.5ms | ActiveRecord: 5.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mPanda Load (0.2ms)[0m  [1m[34mSELECT "pandas".* FROM "pandas"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPanda Destroy (0.5ms)[0m  [1m[31mDELETE FROM "pandas" WHERE "pandas"."id" = ?[0m  [["id", 5]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPanda Destroy (0.4ms)[0m  [1m[31mDELETE FROM "pandas" WHERE "pandas"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPanda Destroy (0.3ms)[0m  [1m[31mDELETE FROM "pandas" WHERE "pandas"."id" = ?[0m  [["id", 7]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPanda Destroy (0.5ms)[0m  [1m[31mDELETE FROM "pandas" WHERE "pandas"."id" = ?[0m  [["id", 8]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mPanda Create (0.4ms)[0m  [1m[32mINSERT INTO "pandas" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "joshpanda"], ["password_digest", "$2a$10$UxGsYWH9Gy0o1VF3bqQVv.Pk/9f2xYlCP1efeEIChhVOLhzavO2Fa"], ["created_at", "2018-11-02 16:54:39.018377"], ["updated_at", "2018-11-02 16:54:39.018377"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mFood Create (0.4ms)[0m  [1m[32mINSERT INTO "foods" ("name", "panda_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "ice cake"], ["panda_id", 9], ["created_at", "2018-11-02 16:54:39.037404"], ["updated_at", "2018-11-02 16:54:39.037404"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+Started POST "/auth/" for ::1 at 2018-11-02 13:28:22 -0500
+Processing by AuthController#create as */*
+  Parameters: {"username"=>"joshpanda", "password"=>"[FILTERED]", "foods"=>[], "auth"=>{"username"=>"joshpanda", "password"=>"[FILTERED]", "foods"=>[]}}
+  [1m[36mPanda Load (0.2ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."username" = ? LIMIT ?[0m  [["username", "joshpanda"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5
+Completed 200 OK in 66ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/auth/" for ::1 at 2018-11-02 13:30:21 -0500
+Processing by AuthController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "auth"=>{"password"=>"[FILTERED]"}}
+  [1m[36mPanda Load (0.3ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/auth/" for ::1 at 2018-11-02 13:30:40 -0500
+Processing by AuthController#create as */*
+  Parameters: {"username"=>"joshpanda", "auth"=>{"username"=>"joshpanda"}}
+  [1m[36mPanda Load (0.3ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."username" = ? LIMIT ?[0m  [["username", "joshpanda"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5
+Completed 200 OK in 65ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/auth/" for ::1 at 2018-11-02 13:30:54 -0500
+Processing by AuthController#create as */*
+  Parameters: {"username"=>"joshpanda", "password"=>"[FILTERED]", "auth"=>{"username"=>"joshpanda", "password"=>"[FILTERED]"}}
+  [1m[36mPanda Load (0.2ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."username" = ? LIMIT ?[0m  [["username", "joshpanda"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5
+Completed 200 OK in 70ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/auth/" for ::1 at 2018-11-02 13:47:47 -0500
+Processing by AuthController#create as */*
+  Parameters: {"username"=>"joshpanda", "password"=>"[FILTERED]", "foods"=>[], "auth"=>{"username"=>"joshpanda", "password"=>"[FILTERED]", "foods"=>[]}}
+  [1m[36mPanda Load (0.2ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."username" = ? LIMIT ?[0m  [["username", "joshpanda"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5
+Completed 200 OK in 68ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/auth/" for ::1 at 2018-11-02 13:52:12 -0500
+Processing by AuthController#create as */*
+  Parameters: {"username"=>"joshpanda", "password"=>"[FILTERED]", "foods"=>[], "auth"=>{"username"=>"joshpanda", "password"=>"[FILTERED]", "foods"=>[]}}
+  [1m[36mPanda Load (0.3ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."username" = ? LIMIT ?[0m  [["username", "joshpanda"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5
+Completed 200 OK in 73ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/auth/" for ::1 at 2018-11-02 14:01:21 -0500
+Processing by AuthController#create as */*
+  Parameters: {"username"=>"joshpanda", "password"=>"[FILTERED]", "foods"=>[], "auth"=>{"username"=>"joshpanda", "password"=>"[FILTERED]", "foods"=>[]}}
+  [1m[36mPanda Load (0.2ms)[0m  [1m[34mSELECT  "pandas".* FROM "pandas" WHERE "pandas"."username" = ? LIMIT ?[0m  [["username", "joshpanda"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."panda_id" = ?[0m  [["panda_id", 9]]
+  ↳ app/controllers/auth_controller.rb:7
+Completed 200 OK in 104ms (Views: 33.9ms | ActiveRecord: 1.8ms)
+
+

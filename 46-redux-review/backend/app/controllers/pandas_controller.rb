@@ -4,7 +4,10 @@ class PandasController < ApplicationController
 
     def create
         panda = Panda.create(panda_params)
-        render json: { panda: panda, jwt: encode_token({ panda_id: panda.id }) }
+        render json: { 
+            panda: panda, 
+            jwt: encode_token({ panda_id: panda.id }) 
+        }, include: [ :foods ]
     end
     
     def index

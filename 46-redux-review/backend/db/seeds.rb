@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Panda.destroy_all
+Food.destroy_all
+
+joshpanda = Panda.create(username:'joshpanda', password:'Twinsen33')
+Food.create(name:'ice cake', panda:joshpanda)
